@@ -8,6 +8,11 @@ type album struct {
     Price  float64 `json:"price"`
 }
 
+// getAlbums responds with the list of all albums as JSON.
+func getAlbums(c *gin.Context) {
+    c.IndentedJSON(http.StatusOK, albums)
+}
+
 // albums slice to seed record album data.
 var albums = []album{
     {ID: "1", Title: "Blue Train", Artist: "John Coltrane", Price: 56.99},
